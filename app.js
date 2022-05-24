@@ -139,3 +139,27 @@
 //        }
 //   }
 // }
+
+// 10
+// let str = prompt("Enter names");
+// var arr = str.split(', ');
+// let str2 = str;
+// str2+= ' => ';
+// for(let i=0 ; i<arr.length ; i++){
+//     str2 += `<`+`${arr[i]}` + `>`;
+//     if(i!=(arr.length-1)) str2+=',';
+// }
+// console.log(str2);
+
+// 11
+// let str = prompt("Enter numbers");
+// var arr = str.split(', ');
+// let str2 = str;
+// str2+= ' => ';
+// for(let i=0 ; i<arr.length ; i++){
+//     if( (Number)(arr[i])%2==1){
+//         str2 += `${arr[i]}`;
+//         if(i!=(arr.length-1)) str2+=',';
+//     }
+// }
+// console.log(str2);
