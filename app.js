@@ -1,180 +1,141 @@
-//B1
-// 1)
-// Var and const are keyword to create a variable.
-// 2)
-// The difference between let and var:
-    // var:
-    //   function scoped
-    //   undefined when accessing a variable before it's declared
-    // let:
-    //   block scoped
-    //   ReferenceError when accessing a variable before it's declared
-// 3)
-// The difference between let and const:
-    // let:
-    //   can be reassigned.
-    // const:
-    //   can't be reassigned.
-// 4)
-// Var: use if the variable need to be function scoped;
-// let: use if the variable need to be reassigned.
-// const: use if the variable don't need to be reassigned.
+// 1
+// let a = 5;
+// let b = 6;
 
-//B2
-// 1)
-// Boolean is a primitive data type commonly used in computer programming languages.
-// By definition, a boolean has two possible values: true or false .
-// 2)
-// Value that will be coerced to false:
-//     false 
-//     null
-//     undefined
-//     NaN (stands for “Not a number”)
-//     0
-//     ‘’ or “” (empty string)
-// All other values will be coerced to true
+// [a,b]=[b,a]; // Cách 1
+// b = [a, a = b][0];// Cách 2
+// console.log(a, b);
 
-//B3
-// a)
-// for(let i=0 ; i<7 ; i++){
-//     console.log(i);
-// }
-// b)
-// let n1 = (Number)(prompt("Enter a number?"));
-// for(let i=0 ; i<n1 ; i++){
-//     console.log(i);
-// }
-// c)
-// let n2 = (Number)(prompt("Enter a number?"));
-// for( let i=3 ; i<n2 ; i++){
-//     console.log(i);
-// }
-// d)
-// let n3 = (Number)(prompt("Enter n"));
-// let c3 = (Number)(prompt("Enter c"));
-// for( let i=c3 ; i<n3 ; i++){
-//     console.log(i);
-// }
-// e)
-// let n4 = (Number)(prompt("Enter n"));
-// let c4 = (Number)(prompt("Enter c"));
-// for( let i=c4 ; i<n4 ; i+=3){
-//     console.log(i);
-// }
-// f)
-// let n5 = (Number)(prompt("Enter n"));
-// let c5 = (Number)(prompt("Enter c"));
-// let s = (Number)(prompt("Enter s"));
-// for( let i=c5 ; i<n5 ; i+=s){
-//     console.log(i);
+// 2
+// const str = "Hello beauty there";
+// var arr = str.split(' ');
+// console.log(arr);
+
+// 3
+// const a = [4, 5, 7, -8];
+// console.log(...a);
+
+// 4
+// const gioHang = [];
+// while (true) {
+//   let userInput;
+//   userInput = prompt("What do you want C,R,U,D? ");
+//   userInput=userInput.toLocaleUpperCase();
+//   if(userInput!='C' && userInput!='R' && userInput!='U' && userInput!='D'){
+//       alert("The command is not supported");
+//   }else{
+//     if( userInput == 'R'){
+//         let str2 = "";
+//             for (let i = 0; i < gioHang.length; i++) {
+//               str2 += ` ${i + 1} - ${gioHang[i]} \n`;
+//             }
+//             alert(str2);
+//       }
+//       if( userInput=='C'){
+//           let newItem = prompt("Enter the name of the new item");
+//           let find = gioHang.find(function(e){
+//               return e==newItem;
+//           })
+//           if(!find){
+//             gioHang.push(newItem);
+//           }
+//       }
+//       if( userInput == 'U'){
+//         let spot = (Number)(prompt("Enter the position you want to update"));
+//         let change = prompt("Enter new name");
+//         gioHang[spot] = change;
+//         alert("Done");
+//       }
+//       if( userInput == 'D'){
+//         let spot = (Number)(prompt("Enter the position you want to update"));
+//         gioHang.splice(spot-1,1);
+//         alert("Done");
+//       }
+//   }
+//   let tiepTuc = prompt("Y/N");
+//   if (tiepTuc.toLocaleUpperCase === "N") {
+//     break;
+//   }
 // }
 
-//B4
-// let n = (Number)(prompt("Enter a number?"));
-// let mul=1;
-// for(let i=2; i<=n ; i++){
-//     mul *= i;
-// }
-// console.log("The factorial of "+n+" is " + mul );
+// 5
+// function tong(arr) {
+//     return arr.reduce(function tinhTong(sum, arr) {
+//       return sum + (Number)(arr);
+//     }, 0);
+//   }
+// const str = prompt("Enter the sequence");
+// let arr = str.split(',');
+// console.log(tong(arr));
 
-//B5
-// let age = (Number)(prompt("How old are you?"));
-// if(age<14){
-//     console.log("You are not old enough to view this content");
-// }
-// else {
-//     console.log("Enjoy");
-// }
+// 6
+// const str = prompt("Enter the sequence");
+// let arr = str.split(' ');
+// console.log(Math.min(...arr));
 
-//B6
-// let x = (Number)(prompt("Enter a number?"));
-// if(x<=4){
-//     console.log("Lower half of 9");
+// 7
+// const arr = [3, 4, 6, -9, 10, -88, 2];
+// let numberFind = (Number)(prompt("Enter the number"));
+// let find = arr.find( function(e){
+//     return e==numberFind;
+// })
+// if(find){
+//     let index = arr.findIndex( function(e){
+//         return e===find;
+//     })
+//     console.log( `${numberFind}` + ` is FOUND in the array ` + `${index}`);
 // }
-// else{
-//     console.log("Higher half of 9");
-// }
+// else console.log( `${numberFind}` + ` is NOT FOUND in the array`);
 
-//B7
-// let n = (Number)(prompt("n = "));
-// let x = (Number)(prompt("x = "));
-// if(x < (n/2) ){
-//      console.log( x + " is lower half of " + n);
-// }
-// else{
-//     console.log( x + " is higher half of " + n);
-// } 
-
-//B8
-// let x= (Number)(prompt("Enter a number?"));
-// if(x%2==0){
-//     console.log(x + " is an even number");
-// }
-// else console.log(x + " is an odd number");
-
-//B9
-// a)
-    // console.log("3 L");
-    // console.log("3 H");
-// b)
-    // let n = (Number)(prompt("Enter the total number of L's and H's?"));
-    // if(n%2==0){
-    //     console.log( n/2 + " L");
-    //     console.log( n/2 + " H");
-    // }
-    // else{
-    //     console.log( (n+1)/2 + " L");
-    //     console.log( (n-1)/2 + " H");
-    // }
-// c)
-//     for(let i=0  ; i<8 ; i++ ){
-//         if(i%2==0) console.log(0);
-//         else console.log(1);
+// 8
+// var arr = [5,7,300,90,24,50,75];
+// console.log( `This is my sheep sizes`);
+// console.log(arr);
+// let n=1;
+// let currentMax;
+// while(n<4){
+//     currentMax=(Math.max(...arr));
+//     console.log(`Now my biggest sheep has size `+ `${currentMax}`);
+//     let find = arr.find( function(e){
+//         return e==currentMax;
+//     })
+//     let index = arr.findIndex( function(e){
+//         return e===find;
+//     })
+//     arr[index]=8;
+//     console.log( `After shaving, here is my flock` );
+//     console.log(arr);
+//     console.log(`Month` + `${n}`);
+//     console.log( `Current sheep sizes`);
+//     function mangMoi(arr){
+//         return arr.map( function (x){
+//           return x+50; 
+//     });
 //     }
-// d)
-    // let m = (Number)(prompt("Enter the total number of 1's and 0's?"));
-    // for(let i=0  ; i<m ; i++ ){
-    //     if(i%2==0) console.log(0);
-    //     else console.log(1);
-    // }
+//     arr = mangMoi(arr);
+//     console.log(arr);
+//     n++;
+// }
+// function tong(arr) {
+//     return arr.reduce(function tinhTong(sum, arr) {
+//       return sum + (Number)(arr);
+//     }, 0);
+//   }
+// let sum = tong(arr);
+// console.log(`Total flock size ` + `${sum}`);
+// console.log(`I would get `+`${sum}` + `*2$ = ` + `${sum*2}`);
 
-//B10
-// let weight =(Number)(prompt("Your weight in kg?"));
-// let height =(Number)(prompt("Your height in cm?"));
-// height/=100;
-// let BMI= weight/(height*height);
-// console.log("Your BMI is " + BMI);
-// if(BMI<16) console.log("You are severly underweight");
-// else if(BMI<=18.5) console.log("You are underweight ");
-// else if(BMI<=25) console.log("You are normal");
-// else if(BMI<=30) console.log("You are overweight");
-// else console.log("You are obese");
-
-//B11
-  //function(){
-    //for(let i=0 ; i<4 ; i++){
-        //fd(100);
-        //rt(90);
-    //}
-    //for(let i=0 ; i<4 ; i++){
-        //fd(100);
-        //rt(120);
-    //}
-    //for(let i=0 ; i<5 ; i++){
-        //fd(100);
-        //rt(72);
-    //}
-    //for(let i=0 ; i<6 ; i++){
-        //fd(100);
-        //rt(60);
-    //}
-  //}
-
-//B12
+// 9
 // function demo() {
-//     let n = (Number)(prompt("n = "));
-//     for(let i=0 ; i<n ; i++){
-//       fd(100);
-//       rt(360/n);
-//     }
-//     }
+//     let j;
+//     const colors = ["red","gray","blue","purple","cyan"];
+//     for(let i=0; i<colors.length ; i++){
+//        color(`${colors[i]}`);
+//        j=0;
+//        while(j<4){ 
+//         fd(20*i);
+//         rt(90);
+//         j++;
+//        }
+//   }
+// }
